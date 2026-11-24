@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#3e3c46" />
+    <title>دعوة خطوبة</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="is-locked">
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <linearGradient id="petalFill" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#e3dcd2" />
+          <stop offset=".7" stop-color="#f6f2ec" />
+          <stop offset="1" stop-color="#fff" />
+        </linearGradient>
+        <path id="petal" d="M100 150C70 120 66 70 100 18C134 70 130 120 100 150Z" stroke="#b8955a" stroke-opacity=".6" stroke-width=".9" />
+      </defs>
+      <symbol id="sprig" viewBox="0 0 150 90">
+        <path d="M4 84C40 70 80 50 146 8" fill="none" stroke="currentColor" stroke-width="1.6" />
+        <g fill="currentColor">
+          <ellipse cx="26" cy="68" rx="14" ry="5" transform="rotate(-48 26 68)" />
+          <ellipse cx="34" cy="80" rx="14" ry="5" transform="rotate(8 34 80)" />
+          <ellipse cx="52" cy="58" rx="14" ry="5" transform="rotate(-52 52 58)" />
+          <ellipse cx="60" cy="70" rx="14" ry="5" transform="rotate(5 60 70)" />
+          <ellipse cx="80" cy="45" rx="14" ry="5" transform="rotate(-55 80 45)" />
+          <ellipse cx="88" cy="57" rx="14" ry="5" />
+          <ellipse cx="108" cy="30" rx="13" ry="4.5" transform="rotate(-58 108 30)" />
+          <ellipse cx="116" cy="42" rx="13" ry="4.5" transform="rotate(-5 116 42)" />
+          <ellipse cx="136" cy="14" rx="11" ry="4" transform="rotate(-60 136 14)" />
+        </g>
+      </symbol>
+      <symbol id="divider" viewBox="0 0 150 22">
+        <path d="M6 11h52M92 11h52" stroke="currentColor" stroke-width="1" fill="none" />
+        <path d="M75 3l8 8-8 8-8-8z" fill="none" stroke="currentColor" stroke-width="1.4" />
+        <circle cx="75" cy="11" r="2" fill="currentColor" />
+      </symbol>
+      <symbol id="lotus" viewBox="0 0 200 160">
+        <g fill="url(#petalFill)">
+          <use href="#petal" transform="rotate(-72 100 150)" opacity=".75" />
+          <use href="#petal" transform="rotate(72 100 150)" opacity=".75" />
+          <use href="#petal" transform="rotate(-46 100 150)" opacity=".9" />
+          <use href="#petal" transform="rotate(46 100 150)" opacity=".9" />
+          <use href="#petal" transform="rotate(-22 100 150)" />
+          <use href="#petal" transform="rotate(22 100 150)" />
+          <use href="#petal" />
+        </g>
+        <circle cx="100" cy="146" r="4" fill="#b8955a" opacity=".85" />
+      </symbol>
+    </svg>
+
+    <div class="garden" id="garden" aria-hidden="true">
+      <div class="bloom bloom--1"><svg viewBox="0 0 200 160"><use href="#lotus" /></svg></div>
+      <div class="bloom bloom--2"><svg viewBox="0 0 200 160"><use href="#lotus" /></svg></div>
+      <div class="bloom bloom--3"><svg viewBox="0 0 200 160"><use href="#lotus" /></svg></div>
+      <div class="bloom bloom--4"><svg viewBox="0 0 200 160"><use href="#lotus" /></svg></div>
+    </div>
+
+    <div class="cover" id="cover">
+      <div class="cover__bloom cover__bloom--1"><svg viewBox="0 0 200 160"><use href="#lotus" /></svg></div>
+      <div class="cover__bloom cover__bloom--2"><svg viewBox="0 0 200 160"><use href="#lotus" /></svg></div>
+      <div class="cover__card reveal" id="coverCard">
+        <svg class="sprig sprig--top" aria-hidden="true"><use href="#sprig" /></svg>
+        <svg class="sprig sprig--bottom" aria-hidden="true"><use href="#sprig" /></svg>
+        <small class="cover__label">تتشرف عائلتانا بدعوتكم لحضور</small>
+        <small class="cover__label">حفل خطوبة</small>
+        <div class="cover__names">
+          <span id="coverGroom"></span>
+          <span class="cover__and">&amp;</span>
+          <span id="coverBride"></span>
+        </div>
+        <div class="cover__date" id="coverDate"></div>
+        <button class="button" id="openButton" type="button">افتح الدعوة</button>
+      </div>
+    </div>
+
+    <div class="page" id="page">
+      <main>
+        <section class="section section--hero">
+          <div class="hero">
+            <svg class="sprig sprig--top" aria-hidden="true"><use href="#sprig" /></svg>
+            <svg class="sprig sprig--bottom" aria-hidden="true"><use href="#sprig" /></svg>
+            <p class="hero__bismillah">بسم الله الرحمن الرحيم</p>
+            <svg class="ornament" aria-hidden="true"><use href="#divider" /></svg>
+            <p class="hero__text">بقلوب يملؤها الفرح<br />يسعدنا دعوتكم لحضور حفل خطوبة</p>
+            <div class="couple">
+              <div class="couple__name reveal" data-reveal="blur" data-delay="500" id="groomName"></div>
+              <div class="couple__and reveal" data-reveal="blur" data-delay="900">و</div>
+              <div class="couple__name reveal" data-reveal="blur" data-delay="1300" id="brideName"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>لحظاتنا</h2>
+          <svg class="ornament" aria-hidden="true"><use href="#divider" /></svg>
+          <div class="gallery" id="gallery"></div>
+        </section>
+
+        <section class="section">
+          <h2>موعد الحفل</h2>
+          <svg class="ornament" aria-hidden="true"><use href="#divider" /></svg>
+          <div class="date-line">
+            <span id="weekday"></span><b id="dayNumber"></b><span id="monthName"></span>
+          </div>
+          <div class="date-year" id="yearNumber"></div>
+          <div class="times">
+            <div><span>الاستقبال</span><strong id="receptionTime"></strong></div>
+            <div><span>بدء الحفل</span><strong id="startTime"></strong></div>
+          </div>
+          <h3 class="countdown-title">باقي على الخطوبة</h3>
+          <div class="countdown">
+            <div><b id="daysLeft">٠</b><span>يوم</span></div>
+            <div><b id="hoursLeft">٠</b><span>ساعة</span></div>
+            <div><b id="minutesLeft">٠</b><span>دقيقة</span></div>
+            <div><b id="secondsLeft">٠</b><span>ثانية</span></div>
+          </div>
+        </section>
+
+        <section class="section section--calendar">
+          <div class="calendar">
+            <h3 class="calendar__title" id="calendarTitle"></h3>
+            <div class="calendar__grid" id="calendarGrid"></div>
+          </div>
+          <button class="button button--outline" id="addToCalendar" type="button">أضف للتقويم</button>
+        </section>
+
+        <section class="section venue">
+          <h2>مكان الحفل</h2>
+          <svg class="ornament" aria-hidden="true"><use href="#divider" /></svg>
+          <div class="venue__name" id="venueName"></div>
+          <div class="venue__address" id="venueAddress"></div>
+          <iframe class="venue__map" id="venueMap" title="خريطة مكان الحفل" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <a class="button" id="mapLink" target="_blank" rel="noopener">افتح في الخرائط</a>
+        </section>
+      </main>
+
+      <footer class="closing">
+        <svg class="ornament" aria-hidden="true"><use href="#divider" /></svg>
+        بحضوركم تكتمل فرحتنا
+      </footer>
+
+      <div class="credits">
+        <svg class="ornament" aria-hidden="true"><use href="#divider" /></svg>
+        <p class="credits__role">تصميم وتطوير المواقع والدعوات الإلكترونية</p>
+        <p class="credits__name">Mohamed Ayman</p>
+        <p class="credits__phone" dir="ltr">01023001692</p>
+        <div class="credits__links">
+          <a href="https://wa.me/201023001692" target="_blank" rel="noopener">واتساب</a>
+          <a href="tel:+201023001692">اتصال</a>
+        </div>
+        <p class="credits__copy">&copy; 2026 Mohamed Ayman. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
